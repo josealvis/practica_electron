@@ -1,0 +1,1 @@
+module.exports = {data: 'buba buba'};

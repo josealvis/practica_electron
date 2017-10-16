@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My app</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@0.7.5/dist/vue-material.css">
+    
+  </head>
+  <body style="-webkit-app-region: drag">
+    <div id="app">
+      <md-input-container>
+        <label>New persona</label>
+        <md-input v-model="newPersona"></md-input>
+      </md-input-container>
+
+        <md-button @click="getPersonas" class="md-raised md-primary">Get personas</md-button>
+        <md-button @click="insertPersona(newPersona)" class="md-raised md-primary"> Guardar</md-button>
+        
+  
+        <md-table >
+          <md-table-header>
+            <md-table-row>
+              <md-table-head>Nombre</md-table-head>
+
+            </md-table-row>
+          </md-table-header>
+        
+          <md-table-body>
+            <md-table-row v-for="(row, index) in personas" :key="index">
+              <md-table-cell>{{row.Nombre}}</md-table-cell>
+   
+            </md-table-row>
+          </md-table-body>
+        </md-table>
+
+
+
+
+    </div>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/vue-material/dist/vue-material.js"></script>
+
+  
+    <script>
+      // You can also require other files to run in this process
+     
+      require('./renderer.js');
+    </script>
+  </body>
+</html>
